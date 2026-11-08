@@ -10,6 +10,7 @@ import { diasHasta, fecha, nuevoCodigo } from '@/lib/formato';
 type Lead = {
   id: string; nombre: string; telefono: string; comuna: string; modelo: string;
   subsidio: string; terreno: string; estado: string; notas: string;
+  email?: string; vivienda?: { slug: string; nombre: string; comuna: string; precioUF: number } | null;
   vencimientoSubsidio: Timestamp | null; creado: Timestamp | null; proyectoId?: string;
 };
 
@@ -41,8 +42,8 @@ export default function Contactos() {
     const m = modeloPorId(l.modelo);
     const ref = await addDoc(collection(clientDb(), 'proyectos'), {
       codigo: nuevoCodigo(), familia: l.nombre.split(' ').slice(-1)[0] || l.nombre, contacto: l.nombre,
-      telefono: l.telefono, comuna: l.comuna, modelo: m.id, precioUF: m.precioUF,
-      aporteUF: Math.max(0, m.precioUF - SUBSIDIO_UF - AHORRO_MINIMO_UF),
+      telefono: l.telefono, comuna: l.comuna, modelo: m.id, precioUF: l.vivienda?.precioUF ?? m.precioUF,
+      aporteUF: Math.max(0, (l.vivienda?.precioUF ?? m.precioUF) - SUBSIDIO_UF - AHORRO_MINIMO_UF),
       etapa: 1, proximoPaso: '', vencimientoSubsidio: l.vencimientoSubsidio ?? null,
       historial: [{ etapa: 1, nota: 'Iniciamos la evaluación de su caso.', fecha: Timestamp.now() }],
       fotos: [], leadId: l.id, creado: serverTimestamp(),
@@ -74,11 +75,12 @@ export default function Contactos() {
             <div className="pila" style={{ gap: 6 }}>
               <strong style={{ fontSize: 20 }}>{l.nombre}</strong>
               <span>{l.comuna} · {fecha(l.creado?.toDate())}</span>
+              {l.email && <a href={`mailto:${l.email}`} style={{ fontSize: 15 }}>{l.email}</a>}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                 <span className={`chip ${califica ? 'chip-ok' : ''}`}>{califica ? 'Califica' : 'Revisar'}</span>
                 <span className="chip">{SUBSIDIO_TXT[l.subsidio] ?? l.subsidio}</span>
-                <span className="chip">{l.terreno === 'si' ? 'Con terreno' : 'Sin terreno'}</span>
-                <span className="chip">{l.modelo === 'no-se' ? 'Modelo por definir' : modeloPorId(l.modelo).nombre}</span>
+                <span className="chip">{l.terreno === 'si' ? 'Con terreno' : l.terreno === 'no' ? 'Sin terreno' : 'Terreno sin dato'}</span>
+                <span className="chip">{l.vivienda ? `${l.vivienda.nombre} · ${l.vivienda.comuna}` : l.modelo === 'no-se' ? 'Modelo por definir' : modeloPorId(l.modelo).nombre}</span>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                 <a className="btn btn-borde btn-chico" href={`tel:${l.telefono.replace(/\s/g, '')}`}>Llamar {l.telefono}</a>
