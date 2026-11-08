@@ -1,0 +1,28 @@
+.admin { font-size: 17px; background: #F6F8F7; min-height: 100vh; }
+.admin h1 { font-size: 32px; }
+.admin h2 { font-size: 24px; }
+.admin-barra { background: var(--verde-900); color: #FFFFFF; }
+.admin-barra .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px; padding-top: 10px; padding-bottom: 10px; }
+.admin-barra nav { display: flex; flex-wrap: wrap; gap: 6px; }
+.admin-barra a, .admin-barra button { color: #FFFFFF; text-decoration: none; font: inherit; font-weight: 700; background: transparent; border: none; cursor: pointer; padding: 10px 14px; border-radius: 10px; min-height: 44px; }
+.admin-barra a[aria-current="page"] { background: var(--verde); }
+.admin-cuerpo { padding: 28px 0 60px; }
+.filtros { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 20px; }
+.filtros button { font: inherit; font-weight: 700; padding: 8px 14px; border-radius: 999px; border: 2px solid var(--borde-fuerte); background: #FFFFFF; cursor: pointer; min-height: 44px; }
+.filtros button[aria-pressed="true"] { background: var(--verde); color: #FFFFFF; border-color: var(--verde); }
+.fila { background: #FFFFFF; border: 1px solid var(--borde); border-radius: 14px; padding: 16px 18px; display: grid; grid-template-columns: 1.4fr 1fr 1.6fr; gap: 16px; align-items: start; }
+.fila + .fila { margin-top: 10px; }
+.fila .campo { font-size: 15px; }
+.fila .campo input, .fila .campo select, .fila .campo textarea { min-height: 44px; padding: 8px 12px; font-size: 16px; }
+.fila .campo textarea { min-height: 70px; }
+.chip { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 999px; font-size: 14px; font-weight: 700; background: var(--fondo-suave); }
+.chip-alerta { background: #FBE7E4; color: var(--error); }
+.chip-ok { background: #E1F1EA; color: var(--verde); }
+.progreso { height: 10px; background: var(--borde); border-radius: 999px; overflow: hidden; }
+.progreso div { height: 100%; background: var(--verde); }
+.vacio { background: #FFFFFF; border: 2px dashed var(--borde-fuerte); border-radius: 16px; padding: 28px; text-align: center; color: var(--gris); }
+.rejilla-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.fotos-admin { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+.fotos-admin figure { margin: 0; position: relative; }
+.fotos-admin img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; }
+@media (max-width: 860px) { .fila { grid-template-columns: 1fr; } }

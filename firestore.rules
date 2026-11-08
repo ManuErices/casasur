@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function esAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    // Lista de usuarios con acceso al panel. Se crea a mano en la consola de Firebase.
+    match /admins/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    // Los contactos los crea el servidor (formulario del sitio); el panel los lee y edita.
+    match /leads/{id} {
+      allow read, update, delete: if esAdmin();
+      allow create: if false;
+    }
+
+    // Clientes en proceso. El portal de la familia los lee desde el servidor.
+    match /proyectos/{id} {
+      allow read, write: if esAdmin();
+    }
+  }
+}
