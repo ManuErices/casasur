@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Cabecera from '@/components/Cabecera';
+import Cabecera from '@/components/sitio/Cabecera';
 import { adminDb } from '@/lib/firebase-admin';
 import { ETAPAS, etapaPorId } from '@/lib/etapas';
 import { CONTACTO, modeloPorId } from '@/lib/config';

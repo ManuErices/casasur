@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Cabecera from '@/components/Cabecera';
+import Cabecera from '@/components/sitio/Cabecera';
 import { CONTACTO } from '@/lib/config';
 
 export default function EntrarPortal() {

@@ -4,7 +4,9 @@ Aplicación web en **Next.js 14** con **Firebase** (Firestore, Auth y Storage), 
 
 | Ruta | Qué es | Quién la usa |
 |---|---|---|
-| `/` | Sitio con modelos, simulador de aporte y formulario de contacto | Familias |
+| `/` | Sitio: hero, buscador y catálogo, guía DS1, simulador, proceso, testimonios y contacto | Familias |
+| `/viviendas/[slug]` | Ficha de cada vivienda: galería, plano, especificaciones, ubicación y cotización | Familias |
+| `/privacidad` | Aviso legal y de privacidad (plantilla a revisar por asesoría legal) | Todos |
 | `/portal` | Entrada con código al seguimiento de la obra | Familias clientes |
 | `/portal/CS-XXXXXX` | Etapa actual, fotos del avance y novedades | Familias clientes |
 | `/admin` | Contactos que llegan del formulario (CRM) | Equipo |
@@ -66,15 +68,21 @@ Abre <http://localhost:3000>. El panel está en <http://localhost:3000/admin>.
 
 ## 5. Dónde cambiar cosas
 
+> ⚠️ **Contenido de demostración.** Las viviendas de `lib/viviendas.ts`, sus disponibilidades y los testimonios de `components/sitio/Testimonios.tsx` son ficticios y se muestran con la etiqueta *Demo*. Reemplázalos antes de publicar. Las fotos de interiores son de ambientación (Unsplash) y tienen un respaldo visual si no cargan.
+
 | Quiero cambiar… | Archivo |
 |---|---|
+| Viviendas del catálogo (precio, ubicación, disponibilidad, DS1, fotos) | `lib/viviendas.ts` |
+| Pasar el catálogo a Firestore | `lib/catalogo.ts` (instrucciones en el archivo) |
+| Textos educativos del DS1 | `lib/ds1.ts` |
+| Colores, tipografías y componentes visuales | `tailwind.config.ts`, `app/globals.css`, `app/layout.tsx` |
+| Fotografías del hero y recortes | reemplaza `public/ranco.jpg` y ejecuta `node scripts/fotos.mjs` |
+| Correo, redes sociales y URL del sitio | Variables `NEXT_PUBLIC_EMAIL`, `NEXT_PUBLIC_INSTAGRAM`, `NEXT_PUBLIC_FACEBOOK`, `NEXT_PUBLIC_SITIO_URL` |
 | Precios, características o imágenes de los modelos | `lib/config.ts` → `MODELOS` |
 | Subsidio, ahorro mínimo, extra rural, cuotas del aporte | `lib/config.ts` |
 | Comunas | `lib/config.ts` → `COMUNAS` |
 | Etapas de la obra y sus textos para la familia | `lib/etapas.ts` |
 | Teléfono, WhatsApp, asesor, horario, razón social | Variables `NEXT_PUBLIC_*` en Vercel |
-| Colores y tipografías | `app/globals.css` y `app/layout.tsx` |
-| Fotos de los modelos | carpeta `public/` y campo `imagen` del modelo |
 
 La UF se consulta todos los días en mindicador.cl. Si el servicio no responde, se usa `UF_RESPALDO` de `lib/config.ts`.
 

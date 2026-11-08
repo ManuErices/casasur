@@ -8,7 +8,14 @@ export const CONTACTO = {
   razonSocial: process.env.NEXT_PUBLIC_RAZON_SOCIAL || 'Nombre Constructora SpA',
   registroMinvu: process.env.NEXT_PUBLIC_REGISTRO_MINVU || 'N° de inscripción',
   egis: process.env.NEXT_PUBLIC_EGIS || 'Nombre EGIS · N° de inscripción',
+  email: process.env.NEXT_PUBLIC_EMAIL || 'correo@tudominio.cl',
+  direccion: process.env.NEXT_PUBLIC_DIRECCION || 'Valdivia, Región de Los Ríos',
+  instagram: process.env.NEXT_PUBLIC_INSTAGRAM || '',
+  facebook: process.env.NEXT_PUBLIC_FACEBOOK || '',
 };
+
+/** URL pública del sitio (SEO: canónicas, sitemap y Open Graph). */
+export const SITIO_URL = (process.env.NEXT_PUBLIC_SITIO_URL || 'http://localhost:3000').replace(/\/$/, '');
 
 /** Valor de respaldo si no se puede consultar la UF del día. */
 export const UF_RESPALDO = 41200;
