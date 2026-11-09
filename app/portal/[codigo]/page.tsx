@@ -28,7 +28,7 @@ export default async function PortalFamilia({ params }: { params: { codigo: stri
         <Cabecera />
         <main className="portal">
           <h1 style={{ fontSize: 40 }}>No encontramos ese código</h1>
-          <p className="texto-suave">Revise que esté bien escrito (por ejemplo, CS-ABC234). Si sigue sin funcionar, llame a su asesor al {CONTACTO.telefono}.</p>
+          <p className="texto-suave">Revise que esté bien escrito (por ejemplo, PL-ABC234). Si sigue sin funcionar, llame a su asesor al {CONTACTO.telefono}.</p>
           <Link href="/portal" className="btn btn-primario" style={{ alignSelf: 'flex-start' }}>Escribir el código otra vez</Link>
         </main>
       </>

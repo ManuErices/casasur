@@ -19,7 +19,7 @@ function Segmentado({ etiqueta, opciones, valor, cambiar }: { etiqueta: string; 
         {opciones.map((o) => (
           <label key={o.v} className="relative flex-1">
             <input type="radio" className="peer sr-only" checked={valor === o.v} onChange={() => cambiar(o.v)} name={etiqueta} />
-            <span className="flex min-h-[42px] cursor-pointer items-center justify-center rounded-xl px-3 text-sm font-medium text-grafito-500 transition-all peer-checked:bg-bosque peer-checked:text-marfil peer-focus-visible:ring-2 peer-focus-visible:ring-copihue">
+            <span className="flex min-h-[42px] cursor-pointer items-center justify-center rounded-xl px-3 text-sm font-medium text-grafito-500 transition-all peer-checked:bg-bosque peer-checked:text-marfil peer-focus-visible:ring-2 peer-focus-visible:ring-laton">
               {o.t}
             </span>
           </label>
@@ -33,7 +33,7 @@ function Interruptor({ children, activo, cambiar }: { children: ReactNode; activ
   return (
     <label className="flex min-h-[44px] cursor-pointer items-center gap-3 text-sm font-medium text-grafito-700">
       <input type="checkbox" className="peer sr-only" checked={activo} onChange={(e) => cambiar(e.target.checked)} />
-      <span className="relative h-6 w-11 flex-none rounded-full bg-grafito/15 transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow after:transition-transform peer-checked:bg-bosque peer-checked:after:translate-x-5 peer-focus-visible:ring-2 peer-focus-visible:ring-copihue" />
+      <span className="relative h-6 w-11 flex-none rounded-full bg-grafito/15 transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow after:transition-transform peer-checked:bg-bosque peer-checked:after:translate-x-5 peer-focus-visible:ring-2 peer-focus-visible:ring-laton" />
       {children}
     </label>
   );
@@ -80,7 +80,7 @@ export default function Catalogo({ viviendas }: { viviendas: Vivienda[] }) {
                 <strong className="text-bosque-900">{resultado.length}</strong> de {viviendas.length} viviendas
               </p>
               {activos > 0 && (
-                <button type="button" onClick={() => setF(inicial)} className="min-h-[40px] text-sm font-semibold text-copihue-600 underline-offset-4 hover:underline">
+                <button type="button" onClick={() => setF(inicial)} className="min-h-[40px] text-sm font-semibold text-laton-700 underline-offset-4 hover:underline">
                   Limpiar ({activos})
                 </button>
               )}

@@ -16,11 +16,11 @@ export default function Hero() {
 
       <div className="contenedor flex flex-1 flex-col justify-end pb-32 pt-36 sm:pb-40">
         <div className="max-w-3xl">
-          <p className="animate-aparecer text-[0.8rem] font-semibold uppercase tracking-[0.22em] text-arena-200" style={{ animationDelay: '150ms' }}>
+          <p className="animate-aparecer text-[0.8rem] font-semibold uppercase tracking-[0.22em] text-laton" style={{ animationDelay: '150ms' }}>
             Primera vivienda · Región de Los Ríos
           </p>
           <h1 id="t-hero" className="sombra-texto mt-5 animate-aparecer font-display text-display-xl text-marfil" style={{ animationDelay: '250ms' }}>
-            Tu subsidio ya tiene <em className="text-arena-200">forma de casa.</em>
+            Tu subsidio ya tiene <em className="text-laton">forma de casa.</em>
           </h1>
           <p className="sombra-texto mt-6 max-w-xl animate-aparecer text-lg leading-relaxed text-white/85 sm:text-xl" style={{ animationDelay: '400ms' }}>
             Viviendas diseñadas para el sur de Chile y pensadas para adquirirse con el subsidio habitacional DS1. Te acompañamos desde la primera consulta hasta la entrega de llaves.

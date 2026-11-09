@@ -24,7 +24,7 @@ export default function EntrarPortal() {
         </div>
         <form className="tarjeta" onSubmit={entrar}>
           <label className="campo">Su código
-            <input type="text" value={codigo} onChange={(e) => setCodigo(e.target.value)} placeholder="CS-ABC234" autoCapitalize="characters" autoComplete="off" required style={{ fontSize: 26, letterSpacing: 2 }} />
+            <input type="text" value={codigo} onChange={(e) => setCodigo(e.target.value)} placeholder="PL-ABC234" autoCapitalize="characters" autoComplete="off" required style={{ fontSize: 26, letterSpacing: 2 }} />
           </label>
           <button type="submit" className="btn btn-primario">Ver mi casa</button>
         </form>

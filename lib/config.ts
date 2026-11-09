@@ -1,4 +1,4 @@
-export const MARCA = process.env.NEXT_PUBLIC_MARCA || 'Casa Sur';
+export const MARCA = process.env.NEXT_PUBLIC_MARCA || 'Primera Llave';
 
 export const CONTACTO = {
   telefono: process.env.NEXT_PUBLIC_TELEFONO || '+56 9 0000 0000',

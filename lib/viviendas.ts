@@ -241,7 +241,7 @@ export const VIVIENDAS_DEMO: Vivienda[] = [
   },
 ];
 
-/** Especificaciones comunes de la línea (de la oferta actual de Casa Sur). */
+/** Especificaciones comunes de la línea (de la oferta actual). */
 export const ESPECIFICACIONES: { grupo: string; items: string[] }[] = [
   { grupo: 'Envolvente y confort', items: ['Aislación en muros y techo según la norma térmica vigente', 'Ventanas con doble vidrio de baja emisividad', 'Calefón de 10 litros certificado'] },
   { grupo: 'Interior', items: ['Estar, comedor y cocina integrados con luz natural', 'Dormitorios con clóset', 'Baño completo con espacio para lavadora', 'Cocina con muebles y lavaplatos'] },

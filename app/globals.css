@@ -15,7 +15,7 @@
     text-rendering: optimizeLegibility;
   }
   ::selection { @apply bg-bosque text-marfil; }
-  :focus-visible { @apply outline-none ring-2 ring-copihue ring-offset-2 ring-offset-marfil; }
+  :focus-visible { @apply outline-none ring-2 ring-laton ring-offset-2 ring-offset-marfil; }
   /* Las cifras siempre alineadas: precios, UF y superficies. */
   .cifras { font-variant-numeric: tabular-nums; }
   @media (prefers-reduced-motion: reduce) {
@@ -36,10 +36,10 @@
   /* Botones */
   .boton {
     @apply inline-flex min-h-[52px] items-center justify-center gap-2.5 rounded-full px-7 text-[0.98rem] font-semibold
-      transition-all duration-300 ease-suave focus-visible:ring-2 focus-visible:ring-copihue focus-visible:ring-offset-2
+      transition-all duration-300 ease-suave focus-visible:ring-2 focus-visible:ring-laton focus-visible:ring-offset-2
       disabled:cursor-wait disabled:opacity-60;
   }
-  .boton-accion { @apply boton bg-copihue text-white shadow-[0_10px_30px_-12px_rgba(179,65,43,.7)] hover:-translate-y-0.5 hover:bg-copihue-600; }
+  .boton-accion { @apply boton bg-laton text-bosque-950 shadow-[0_12px_30px_-12px_rgba(242,179,61,.75)] hover:-translate-y-0.5 hover:bg-laton-300; }
   .boton-bosque { @apply boton bg-bosque text-marfil hover:-translate-y-0.5 hover:bg-bosque-900; }
   .boton-claro { @apply boton bg-marfil text-bosque-900 hover:-translate-y-0.5 hover:bg-white; }
   .boton-vidrio { @apply boton border border-white/40 bg-white/10 text-white backdrop-blur-md hover:bg-white/20; }

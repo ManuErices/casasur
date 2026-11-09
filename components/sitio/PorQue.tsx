@@ -4,6 +4,7 @@ import { Foto } from '../media/Foto';
 import { Plano } from '../vivienda/Plano';
 import { INTERIORES } from '@/lib/viviendas';
 import { ETAPAS } from '@/lib/etapas';
+import { MARCA } from '@/lib/config';
 
 /** Maqueta del portal de clientes real (/portal): el acompañamiento hecho producto. */
 function MaquetaPortal() {
@@ -13,7 +14,7 @@ function MaquetaPortal() {
       <div className="w-[min(78%,300px)] rounded-[2.4rem] bg-grafito-900 p-2.5 shadow-elevada ring-1 ring-white/10">
         <div className="overflow-hidden rounded-[1.9rem] bg-marfil">
           <div className="bg-bosque px-5 pb-5 pt-7 text-marfil">
-            <p className="text-[0.65rem] uppercase tracking-[0.18em] text-arena-200">Portal Casa Sur</p>
+            <p className="text-[0.65rem] uppercase tracking-[0.18em] text-arena-200">Portal {MARCA}</p>
             <p className="mt-1 font-display text-xl leading-tight">Hola, familia Soto</p>
             <p className="mt-3 text-[0.7rem] text-marfil/70">Etapa {actual} de {ETAPAS.length}</p>
             <p className="font-display text-lg">{ETAPAS[actual - 1].titulo}</p>
@@ -22,7 +23,7 @@ function MaquetaPortal() {
           <ol className="flex flex-col gap-2.5 px-5 py-5">
             {ETAPAS.slice(2, 7).map((e) => (
               <li key={e.id} className="flex items-center gap-2.5 text-[0.72rem]">
-                <span className={`flex h-5 w-5 flex-none items-center justify-center rounded-full text-[0.6rem] font-bold ${e.id < actual ? 'bg-bosque text-marfil' : e.id === actual ? 'bg-copihue text-white' : 'bg-arena-200 text-grafito-500'}`}>{e.id < actual ? '✓' : e.id}</span>
+                <span className={`flex h-5 w-5 flex-none items-center justify-center rounded-full text-[0.6rem] font-bold ${e.id < actual ? 'bg-bosque text-marfil' : e.id === actual ? 'bg-laton text-bosque-950' : 'bg-arena-200 text-grafito-500'}`}>{e.id < actual ? '✓' : e.id}</span>
                 <span className={e.id === actual ? 'font-semibold text-grafito' : 'text-grafito-500'}>{e.titulo}</span>
               </li>
             ))}
@@ -95,14 +96,14 @@ export default function PorQue() {
                 </div>
               ))}
               <div className="absolute right-5 top-5 flex gap-1.5">
-                {CAPITULOS.map((c, i) => <span key={c.titulo} className={`h-1.5 rounded-full transition-all duration-500 ${i === activo ? 'w-6 bg-copihue' : 'w-1.5 bg-grafito/25'}`} />)}
+                {CAPITULOS.map((c, i) => <span key={c.titulo} className={`h-1.5 rounded-full transition-all duration-500 ${i === activo ? 'w-6 bg-laton' : 'w-1.5 bg-grafito/25'}`} />)}
               </div>
             </div>
           </div>
 
           <div>
             <div className="flex flex-col gap-5 lg:min-h-[40vh] lg:justify-center">
-              <span className="antetitulo-cs">Por qué Casa Sur</span>
+              <span className="antetitulo-cs">Por qué {MARCA}</span>
               <h2 id="t-porque" className="equilibrar font-display text-display-lg text-bosque-950">Casas pensadas para el sur. <em>Y para quedarse.</em></h2>
               <p className="max-w-xl text-lg text-grafito-500">No vendemos metros cuadrados: diseñamos la primera casa de una familia. Esto es lo que cuidamos en cada una.</p>
             </div>
@@ -111,7 +112,7 @@ export default function PorQue() {
                 <li key={c.titulo} ref={(el) => { refs.current[i] = el; }} data-i={i}
                   className={`flex flex-col gap-5 border-t border-grafito/10 py-10 transition-opacity duration-500 lg:min-h-[52vh] lg:justify-center ${i === activo ? 'lg:opacity-100' : 'lg:opacity-35'}`}>
                   <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-arena-100 lg:hidden">{c.visual}</div>
-                  <span className="cifras font-display text-xl text-copihue">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="cifras font-display text-xl text-laton-700">{String(i + 1).padStart(2, '0')}</span>
                   <h3 className="font-display text-[2.2rem] leading-tight text-bosque-950">{c.titulo}</h3>
                   <p className="max-w-lg text-lg leading-relaxed text-grafito-500">{c.texto}</p>
                 </li>

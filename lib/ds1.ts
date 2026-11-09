@@ -14,7 +14,7 @@ export const QUE_ES = {
 
 export const TIPOS_VIVIENDA = [
   { titulo: 'Vivienda nueva o usada', texto: 'Comprar una casa o departamento que cumpla las condiciones del programa.' },
-  { titulo: 'Construcción en sitio propio', texto: 'Construir tu casa en un terreno que ya es tuyo. Es la especialidad de Casa Sur.' },
+  { titulo: 'Construcción en sitio propio', texto: 'Construir tu casa en un terreno que ya es tuyo. Es nuestra especialidad.' },
 ];
 
 export const QUE_APORTAS = [

@@ -64,9 +64,9 @@ export default function TarjetaVivienda({ v, destacada = false, cotizarEnFicha =
             <p className="cifras text-sm text-grafito-500">≈ <EnPesos uf={v.precioUF} compacto /></p>
           </div>
           {cotizarEnFicha ? (
-            <Link href={`/viviendas/${v.slug}#contacto`} className="flex h-11 items-center rounded-full px-4 text-sm font-semibold text-copihue-600 transition-colors hover:bg-copihue-50" aria-label={`Cotizar la vivienda ${v.nombre} en ${v.comuna}`}>Cotizar</Link>
+            <Link href={`/viviendas/${v.slug}#contacto`} className="flex h-11 items-center rounded-full px-4 text-sm font-semibold text-laton-700 transition-colors hover:bg-laton-50" aria-label={`Cotizar la vivienda ${v.nombre} en ${v.comuna}`}>Cotizar</Link>
           ) : (
-            <button type="button" onClick={() => elegir(v.slug, 'contacto')} className="flex h-11 items-center rounded-full px-4 text-sm font-semibold text-copihue-600 transition-colors hover:bg-copihue-50" aria-label={`Cotizar la vivienda ${v.nombre} en ${v.comuna}`}>Cotizar</button>
+            <button type="button" onClick={() => elegir(v.slug, 'contacto')} className="flex h-11 items-center rounded-full px-4 text-sm font-semibold text-laton-700 transition-colors hover:bg-laton-50" aria-label={`Cotizar la vivienda ${v.nombre} en ${v.comuna}`}>Cotizar</button>
           )}
         </div>
 
