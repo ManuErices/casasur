@@ -11,7 +11,7 @@ export function Simbolo({ className = 'h-9 w-auto', color = 'currentColor' }: { 
 }
 
 /** Logo horizontal oficial: símbolo | Primera / Llave. `claro` = sobre fondo oscuro. */
-export function Logo({ claro = false, className = 'h-10 w-auto' }: { claro?: boolean; className?: string }) {
+export function Logo({ claro = false, className = 'h-11 w-auto' }: { claro?: boolean; className?: string }) {
   const simbolo = claro ? '#F2B33D' : '#0F2A22';
   const texto = claro ? '#FBF6EC' : '#0F2A22';
   const barra = claro ? 'rgba(242,179,61,.45)' : 'rgba(15,42,34,.3)';
