@@ -26,11 +26,11 @@ export default function Proceso() {
           <span aria-hidden="true" className="absolute left-[27px] top-2 h-[calc(100%-3rem)] w-px bg-gradient-to-b from-bosque/40 via-bosque/20 to-transparent lg:left-0 lg:right-0 lg:top-[27px] lg:h-px lg:w-full lg:bg-gradient-to-r" />
           {PASOS.map((p, i) => (
             <Revelar como="li" key={p.t} retraso={i * 90} className="relative grid grid-cols-[56px_1fr] gap-5 pb-10 lg:flex lg:flex-col lg:gap-6 lg:pb-0">
-              <span className={`relative z-10 flex h-14 w-14 items-center justify-center rounded-full ring-8 ring-marfil-50 ${i === PASOS.length - 1 ? 'bg-copihue text-white' : 'bg-bosque text-marfil'}`}>
+              <span className={`relative z-10 flex h-14 w-14 items-center justify-center rounded-full ring-8 ring-marfil-50 ${i === PASOS.length - 1 ? 'bg-laton text-bosque-950' : 'bg-bosque text-marfil'}`}>
                 <Icono nombre={p.icono} className="h-6 w-6" />
               </span>
               <div className="flex flex-col gap-2 pt-1 lg:pt-0">
-                <span className="cifras text-xs font-semibold uppercase tracking-[0.14em] text-copihue-600">{String(i + 1).padStart(2, '0')} · {p.cuando}</span>
+                <span className="cifras text-xs font-semibold uppercase tracking-[0.14em] text-laton-700">{String(i + 1).padStart(2, '0')} · {p.cuando}</span>
                 <h3 className="font-display text-[1.55rem] leading-tight text-bosque-950">{p.t}</h3>
                 <p className="text-[0.95rem] leading-relaxed text-grafito-500">{p.d}</p>
               </div>

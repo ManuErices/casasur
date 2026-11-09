@@ -4,7 +4,7 @@ import { Logo } from '../ui/Logo';
 import { Icono } from '../ui/Icono';
 
 const NAV = [
-  { t: 'Explorar', l: [{ h: '/#viviendas', t: 'Viviendas' }, { h: '/#simulador', t: 'Simulador' }, { h: '/#por-que', t: 'Por qué Casa Sur' }] },
+  { t: 'Explorar', l: [{ h: '/#viviendas', t: 'Viviendas' }, { h: '/#simulador', t: 'Simulador' }, { h: '/#por-que', t: `Por qué ${MARCA}` }] },
   { t: 'Aprender', l: [{ h: '/#ds1', t: 'Subsidio DS1' }, { h: '/#proceso', t: 'Proceso de compra' }, { h: '/#confianza', t: 'Testimonios' }] },
   { t: 'Clientes', l: [{ h: '/portal', t: 'Portal de clientes' }, { h: '/#contacto', t: 'Agenda una asesoría' }, { h: '/privacidad', t: 'Aviso de privacidad' }] },
 ];
@@ -20,7 +20,7 @@ export default function Pie() {
     <footer className="bg-bosque-950 text-marfil/70">
       <div className="contenedor grid gap-14 py-20 lg:grid-cols-[1.3fr_2fr]">
         <div className="flex flex-col gap-6">
-          <Logo claro />
+          <Logo claro className="h-12 w-auto self-start" />
           <p className="max-w-sm font-display text-2xl leading-snug text-marfil">Hacemos posible la primera casa de las familias del sur.</p>
           <ul className="flex flex-col gap-2 text-sm">
             <li><a href={`https://wa.me/${CONTACTO.whatsapp}`} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[40px] items-center gap-2.5 hover:text-white"><Icono nombre="whatsapp" className="h-4 w-4" />WhatsApp {CONTACTO.telefono}</a></li>

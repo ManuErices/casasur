@@ -1,4 +1,4 @@
-# Casa Sur · Sitio, simulador, CRM y portal de clientes
+# Primera Llave · Sitio, simulador, CRM y portal de clientes
 
 Aplicación web en **Next.js 14** con **Firebase** (Firestore, Auth y Storage), lista para publicar en **Vercel**.
 
@@ -8,7 +8,7 @@ Aplicación web en **Next.js 14** con **Firebase** (Firestore, Auth y Storage), 
 | `/viviendas/[slug]` | Ficha de cada vivienda: galería, plano, especificaciones, ubicación y cotización | Familias |
 | `/privacidad` | Aviso legal y de privacidad (plantilla a revisar por asesoría legal) | Todos |
 | `/portal` | Entrada con código al seguimiento de la obra | Familias clientes |
-| `/portal/CS-XXXXXX` | Etapa actual, fotos del avance y novedades | Familias clientes |
+| `/portal/PL-XXXXXX` | Etapa actual, fotos del avance y novedades | Familias clientes |
 | `/admin` | Contactos que llegan del formulario (CRM) | Equipo |
 | `/admin/proyectos` | Clientes en proceso, etapas y fotos | Equipo |
 
@@ -60,7 +60,7 @@ Abre <http://localhost:3000>. El panel está en <http://localhost:3000/admin>.
 
 **Llega un contacto.** Cuando alguien llena el formulario, aparece en `/admin` como *Nuevo* (y te llega un correo si configuraste Resend). Desde ahí lo llamas o le escribes por WhatsApp con un toque, cambias su estado, anotas lo conversado y registras la fecha de vencimiento de su subsidio. El panel te avisa en rojo cuando quedan menos de 90 días.
 
-**Se convierte en cliente.** El botón *Convertir en cliente* crea su ficha con un código único (por ejemplo `CS-7KQ2PX`) y te lleva a ella.
+**Se convierte en cliente.** El botón *Convertir en cliente* crea su ficha con un código único (por ejemplo `PL-7KQ2PX`) y te lleva a ella.
 
 **Durante la obra.** En la ficha cambias la etapa (con un mensaje opcional para la familia) y subes fotos desde el celular. La familia lo ve al instante en su portal. El botón *Copiar mensaje para la familia* deja listo el texto con el enlace y el código para mandarlo por WhatsApp.
 
@@ -75,6 +75,7 @@ Abre <http://localhost:3000>. El panel está en <http://localhost:3000/admin>.
 | Viviendas del catálogo (precio, ubicación, disponibilidad, DS1, fotos) | `lib/viviendas.ts` |
 | Pasar el catálogo a Firestore | `lib/catalogo.ts` (instrucciones en el archivo) |
 | Textos educativos del DS1 | `lib/ds1.ts` |
+| Logo y archivos de marca (SVG) | `marca/generar.mjs` → `public/marca/` (ejecuta `node marca/generar.mjs`) |
 | Colores, tipografías y componentes visuales | `tailwind.config.ts`, `app/globals.css`, `app/layout.tsx` |
 | Fotografías del hero y recortes | reemplaza `public/ranco.jpg` y ejecuta `node scripts/fotos.mjs` |
 | Correo, redes sociales y URL del sitio | Variables `NEXT_PUBLIC_EMAIL`, `NEXT_PUBLIC_INSTAGRAM`, `NEXT_PUBLIC_FACEBOOK`, `NEXT_PUBLIC_SITIO_URL` |

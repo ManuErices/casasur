@@ -26,11 +26,11 @@ function Ecuacion() {
             <span aria-hidden="true" className="hidden self-center font-display text-3xl text-grafito-400 sm:block">{i < partes.length - 1 ? '+' : '='}</span>
           </div>
         ))}
-        <div className="flex flex-col justify-between gap-6 rounded-3xl bg-copihue p-5 text-white sm:flex-[1.3]">
+        <div className="flex flex-col justify-between gap-6 rounded-3xl bg-laton p-5 text-bosque-950 sm:flex-[1.3]">
           <Icono nombre="casa" className="h-6 w-6" />
           <div>
             <p className="font-display text-2xl leading-tight">Tu casa</p>
-            <p className="mt-1 text-sm text-white/80">El precio total de la vivienda</p>
+            <p className="mt-1 text-sm text-bosque-950/70">El precio total de la vivienda</p>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@ function Ecuacion() {
 function Tarjeta({ numero, titulo, children, retraso = 0 }: { numero: string; titulo: string; children: React.ReactNode; retraso?: number }) {
   return (
     <Revelar retraso={retraso} className="flex flex-col gap-4 rounded-4xl bg-marfil-50 p-7 ring-1 ring-grafito/5">
-      <span className="cifras font-display text-lg text-copihue">{numero}</span>
+      <span className="cifras font-display text-lg text-laton-700">{numero}</span>
       <h3 className="font-display text-[1.7rem] leading-tight text-bosque-950">{titulo}</h3>
       <div className="text-[0.97rem] leading-relaxed text-grafito-500">{children}</div>
     </Revelar>

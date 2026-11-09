@@ -21,7 +21,7 @@ export default function Testimonios() {
           {TESTIMONIOS.map((t, i) => (
             <Revelar como="li" key={i} retraso={i * 100} className={`relative flex flex-col justify-between gap-10 rounded-4xl p-8 ${i === 1 ? 'bg-bosque text-marfil md:-mt-6 md:mb-6' : 'bg-white text-grafito'}`}>
               <span className={`absolute right-6 top-6 etiqueta-cs border border-dashed ${i === 1 ? 'border-white/30 text-marfil/70' : 'border-grafito/25 text-grafito-400'}`}>Testimonio demo</span>
-              <span aria-hidden="true" className={`font-display text-7xl leading-none ${i === 1 ? 'text-arena-300' : 'text-copihue'}`}>“</span>
+              <span aria-hidden="true" className={`font-display text-7xl leading-none ${i === 1 ? 'text-arena-300' : 'text-laton-600'}`}>“</span>
               <blockquote className="-mt-8 font-display text-[1.45rem] leading-snug">{t.cita}</blockquote>
               <footer className={`flex items-center gap-3 border-t pt-5 text-sm ${i === 1 ? 'border-white/15 text-marfil/75' : 'border-grafito/10 text-grafito-500'}`}>
                 <span className={`flex h-10 w-10 items-center justify-center rounded-full font-display text-lg ${i === 1 ? 'bg-white/10' : 'bg-arena-100 text-bosque-900'}`}>{t.lugar[0]}</span>

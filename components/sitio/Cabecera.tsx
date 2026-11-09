@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Logo } from '../ui/Logo';
 import { Icono } from '../ui/Icono';
-import { CONTACTO } from '@/lib/config';
+import { CONTACTO, MARCA } from '@/lib/config';
 
 const ENLACES = [
   { href: '/#viviendas', texto: 'Viviendas' },
@@ -39,7 +39,7 @@ export default function Cabecera({ sobreFoto = false }: { sobreFoto?: boolean })
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-suave ${desplazado && !abierto ? 'border-b border-grafito/5 bg-marfil/85 shadow-[0_1px_0_rgba(0,0,0,.02)] backdrop-blur-xl' : 'bg-transparent'}`}>
       <a href="#contenido" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2">Saltar al contenido</a>
       <div className={`contenedor flex items-center justify-between transition-all duration-500 ${desplazado ? 'h-[72px]' : 'h-[88px]'}`}>
-        <Link href="/" aria-label="Casa Sur, ir al inicio" className="relative z-10"><Logo claro={claro} /></Link>
+        <Link href="/" aria-label={`${MARCA}, ir al inicio`} className="relative z-10"><Logo claro={claro} /></Link>
 
         <nav aria-label="Principal" className="hidden items-center gap-1 lg:flex">
           {ENLACES.map((e) => (

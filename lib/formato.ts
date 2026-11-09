@@ -26,5 +26,5 @@ export function nuevoCodigo(): string {
   const letras = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   let s = '';
   for (let i = 0; i < 6; i++) s += letras[Math.floor(Math.random() * letras.length)];
-  return `CS-${s}`;
+  return `PL-${s}`;
 }

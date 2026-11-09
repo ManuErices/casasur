@@ -57,7 +57,7 @@ export default function Simulador({ viviendas }: { viviendas: Vivienda[] }) {
     { t: 'Ahorro', v: ahorro, color: 'bg-arena-300', punto: 'bg-arena-300' },
     { t: 'Subsidio estimado', v: subsidio, color: 'bg-bosque-300', punto: 'bg-bosque-300' },
     { t: 'Financiamiento adicional', v: credito, color: 'bg-marfil', punto: 'bg-marfil' },
-    { t: 'Saldo por financiar', v: saldo, color: 'bg-copihue bg-[repeating-linear-gradient(135deg,transparent_0_6px,rgba(255,255,255,.12)_6px_12px)]', punto: 'bg-copihue' },
+    { t: 'Saldo por financiar', v: saldo, color: 'bg-laton bg-[repeating-linear-gradient(135deg,transparent_0_6px,rgba(255,255,255,.12)_6px_12px)]', punto: 'bg-laton' },
   ];
 
   return (
@@ -65,8 +65,8 @@ export default function Simulador({ viviendas }: { viviendas: Vivienda[] }) {
       <div aria-hidden="true" className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-bosque-500/20 blur-3xl" />
       <div className="contenedor relative">
         <Revelar className="flex max-w-3xl flex-col gap-5">
-          <span className="antetitulo-cs !text-arena-300">Simulador de compra</span>
-          <h2 id="t-sim" className="equilibrar font-display text-display-lg">¿Cuánto de tu casa ya está <em className="text-arena-200">resuelto?</em></h2>
+          <span className="antetitulo-cs !text-laton">Simulador de compra</span>
+          <h2 id="t-sim" className="equilibrar font-display text-display-lg">¿Cuánto de tu casa ya está <em className="text-laton">resuelto?</em></h2>
           <p className="max-w-2xl text-lg text-marfil/70">Ingresa el precio de la vivienda y tus montos estimados. Verás al instante cómo se arma el financiamiento y qué saldo quedaría.</p>
         </Revelar>
 
@@ -95,9 +95,9 @@ export default function Simulador({ viviendas }: { viviendas: Vivienda[] }) {
                   <p className="cifras font-display text-6xl leading-none text-bosque-950">{fmt(precio)}<span className="ml-2 text-2xl">UF</span></p>
                   <p className="cifras mt-2 text-grafito-500">≈ <EnPesos uf={precio} /></p>
                 </div>
-                <div className={`rounded-3xl px-5 py-4 text-right ${saldo > 0 ? 'bg-copihue-50' : 'bg-bosque-50'}`}>
-                  <p className={`text-sm font-semibold ${saldo > 0 ? 'text-copihue-700' : 'text-bosque-700'}`}>Saldo por financiar</p>
-                  <p className={`cifras font-display text-4xl leading-tight ${saldo > 0 ? 'text-copihue-700' : 'text-bosque-700'}`}>{fmt(saldo)} UF</p>
+                <div className={`rounded-3xl px-5 py-4 text-right ${saldo > 0 ? 'bg-laton-50' : 'bg-bosque-50'}`}>
+                  <p className={`text-sm font-semibold ${saldo > 0 ? 'text-laton-800' : 'text-bosque-700'}`}>Saldo por financiar</p>
+                  <p className={`cifras font-display text-4xl leading-tight ${saldo > 0 ? 'text-laton-800' : 'text-bosque-700'}`}>{fmt(saldo)} UF</p>
                   <p className="cifras text-sm text-grafito-500">≈ <EnPesos uf={saldo} /></p>
                 </div>
               </div>

@@ -14,9 +14,9 @@ export default function Contacto() {
 
       <div className="contenedor grid items-center gap-14 lg:grid-cols-[1.1fr_1fr]">
         <Revelar className="flex flex-col gap-8">
-          <span className="antetitulo-cs !text-arena-300">Tu próximo capítulo</span>
+          <span className="antetitulo-cs !text-laton">Tu próximo capítulo</span>
           <h2 id="t-contacto" className="equilibrar font-display text-display-lg">
-            Hay decisiones que cambian tu vida. <em className="text-arena-200">Encontrar tu casa es una de ellas.</em>
+            Hay decisiones que cambian tu vida. <em className="text-laton">Encontrar tu casa es una de ellas.</em>
           </h2>
           <p className="max-w-lg text-lg text-marfil/75">Déjanos tus datos y un asesor te llamará para revisar tu caso. Sin presión: primero entender, después decidir.</p>
           <ul className="flex flex-col gap-3 text-marfil/85">

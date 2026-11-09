@@ -141,7 +141,7 @@ export default async function PaginaVivienda({ params }: Props) {
                       <div key={g.grupo} className="rounded-3xl bg-white p-6 ring-1 ring-grafito/5">
                         <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-bosque-500">{g.grupo}</h3>
                         <ul className="mt-4 flex flex-col gap-2.5 text-[0.95rem] text-grafito-700">
-                          {g.items.map((x) => <li key={x} className="flex gap-2.5"><span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-copihue" />{x}</li>)}
+                          {g.items.map((x) => <li key={x} className="flex gap-2.5"><span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-laton" />{x}</li>)}
                         </ul>
                       </div>
                     ))}

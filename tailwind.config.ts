@@ -1,8 +1,9 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * Sistema visual Casa Sur.
- * Bosque (institucional) · Marfil (base) · Arena/Lino (calidez) · Grafito (texto) · Copihue (acción).
+ * Sistema visual Primera Llave.
+ * Latón (color de marca y acción) · Bosque noche (institucional) · Marfil (base) · Arena (calidez) · Grafito (texto).
+ * Copihue queda solo para avisos y errores.
  */
 const config: Config = {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './lib/**/*.{ts,tsx}'],
@@ -11,8 +12,9 @@ const config: Config = {
       colors: {
         marfil: { DEFAULT: '#F7F3EC', 50: '#FBF9F5', 100: '#F7F3EC', 200: '#EFE8DC' },
         arena: { DEFAULT: '#E4D7C3', 100: '#F1E9DC', 200: '#E4D7C3', 300: '#D2BF9F', 400: '#B79E78' },
-        bosque: { DEFAULT: '#1F3B2E', 50: '#E9EFEA', 100: '#CFDCD3', 300: '#7F9D8A', 500: '#3D6150', 700: '#26473A', 800: '#1F3B2E', 900: '#142820', 950: '#0C1A14' },
+        bosque: { DEFAULT: '#1F3B2E', 50: '#E9EFEA', 100: '#CFDCD3', 300: '#7F9D8A', 500: '#3D6150', 700: '#26473A', 800: '#1F3B2E', 900: '#0F2A22', 950: '#0A1F19' },
         grafito: { DEFAULT: '#25292A', 400: '#6E7573', 500: '#565D5B', 700: '#383E3E', 900: '#1A1D1E' },
+        laton: { DEFAULT: '#F2B33D', 50: '#FDF4E1', 100: '#FBE7BD', 300: '#F7CD73', 400: '#F5C055', 600: '#D99A22', 700: '#8F6110', 800: '#6E4A0C' },
         copihue: { DEFAULT: '#B3412B', 50: '#FBEDE8', 400: '#CE5A3F', 600: '#9C3522', 700: '#832B1B' },
       },
       fontFamily: {

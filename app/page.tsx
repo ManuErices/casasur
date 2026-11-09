@@ -44,7 +44,7 @@ export default async function Inicio() {
           <section aria-labelledby="t-manifiesto" className="border-y border-grafito/10 bg-marfil-50 py-20 sm:py-28">
             <div className="contenedor">
               <Encabezado id="t-manifiesto" centrado antetitulo="Nuestra manera de hacerlo"
-                titulo={<>No vendemos casas subsidiadas. <em className="text-copihue">Hacemos posible la primera.</em></>}
+                titulo={<>No vendemos casas subsidiadas. <em className="text-laton-700">Hacemos posible tu primera llave.</em></>}
                 bajada="Detrás de cada certificado hay años de ahorro y una familia esperando. Nuestro trabajo es que ese esfuerzo se convierta en un hogar bien hecho, con claridad en cada paso." />
             </div>
           </section>

@@ -16,7 +16,7 @@ function Chips({ nombre, leyenda, opciones, requerido = false }: { nombre: strin
         {opciones.map((o, i) => (
           <label key={o.v} className="relative">
             <input type="radio" name={nombre} value={o.v} required={requerido && i === 0} className="peer sr-only" />
-            <span className="flex min-h-[44px] cursor-pointer items-center rounded-full border border-grafito/15 bg-white px-4 text-sm font-medium text-grafito-700 transition-all hover:border-bosque/40 peer-checked:border-bosque peer-checked:bg-bosque peer-checked:text-marfil peer-focus-visible:ring-2 peer-focus-visible:ring-copihue">
+            <span className="flex min-h-[44px] cursor-pointer items-center rounded-full border border-grafito/15 bg-white px-4 text-sm font-medium text-grafito-700 transition-all hover:border-bosque/40 peer-checked:border-bosque peer-checked:bg-bosque peer-checked:text-marfil peer-focus-visible:ring-2 peer-focus-visible:ring-laton">
               {o.t}
             </span>
           </label>
