@@ -1,11 +1,11 @@
 // Genera los archivos vectoriales de la marca Primera Llave (node marca/generar.mjs).
-// Las letras se convierten a trazos con Plus Jakarta Sans ExtraBold (licencia OFL), así los SVG
+// Las letras se convierten a trazos con Instrument Serif (licencia OFL), la misma tipografía de los títulos del sitio. Así los SVG
 // se ven idénticos en cualquier equipo, imprenta o programa de diseño.
 import fs from 'node:fs';
 import opentype from 'opentype.js';
 
 const COLOR = { laton: '#F2B33D', bosque: '#0F2A22', marfil: '#FBF6EC' };
-const fuente = opentype.loadSync(new URL('./fuente/PlusJakartaSans-ExtraBold.ttf', import.meta.url).pathname);
+const fuente = opentype.loadSync(new URL('./fuente/InstrumentSerif-Regular.ttf', import.meta.url).pathname);
 const r = (n) => Math.round(n * 100) / 100;
 
 /**
@@ -27,7 +27,7 @@ export const SIMBOLO = `${CUERPO} ${CERRADURA}`;
 const CAJA = { x: 12, y: 6, w: 76, h: 140 };
 
 /** Convierte texto a trazos con interletraje y kerning. */
-function texto(str, x, y, size, tracking = -0.02) {
+function texto(str, x, y, size, tracking = -0.01) {
   const glyphs = fuente.stringToGlyphs(str);
   const escala = size / fuente.unitsPerEm;
   let cx = x;
@@ -48,14 +48,14 @@ const simbolo = (color) => `<path fill-rule="evenodd" fill="${color}" d="${SIMBO
 
 // --- Logo horizontal (oficial): símbolo | Primera / Llave ---
 function horizontal(cSimbolo, cTexto, cBarra) {
-  const S = 60;
+  const S = 78, interlineado = 0.92;
   const cap = alturaMayus(S);
   const centro = CAJA.y + CAJA.h / 2;
-  const base1 = centro + (cap - 1.0 * S) / 2;
+  const base1 = centro + (cap - interlineado * S) / 2;
   const xBarra = CAJA.x + CAJA.w + 24;
   const xTexto = xBarra + 26;
   const l1 = texto('Primera', xTexto, base1, S);
-  const l2 = texto('Llave', xTexto, base1 + S, S);
+  const l2 = texto('Llave', xTexto, base1 + interlineado * S, S);
   const ancho = xTexto + Math.max(l1.ancho, l2.ancho) - CAJA.x;
   const cuerpo = simbolo(cSimbolo)
     + `<rect x="${xBarra}" y="${r(centro - 52)}" width="2.5" height="104" fill="${cBarra}"/>`
@@ -65,7 +65,7 @@ function horizontal(cSimbolo, cTexto, cBarra) {
 
 // --- Logo compacto: 1ra / llave ---
 function compacto(cSimbolo, cTexto) {
-  const Sra = 40, Sll = 58;
+  const Sra = 54, Sll = 80;
   const ra = texto('ra', 80, CAJA.y + alturaX(Sra) + 2, Sra);
   const ll0 = texto('llave', 0, 0, Sll);
   const xll = CAJA.x + CAJA.w / 2 - ll0.ancho / 2 + 6;
